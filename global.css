@@ -1,0 +1,12 @@
+html * {
+	margin: 0px;
+	padding: 0px;
+	font-size: 1em;
+	font-family: Helvetica, Arial, sans-serif !important;
+}
+
+
+a {
+	text-decoration: none;
+	color: black;
+}
