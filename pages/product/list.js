@@ -17,7 +17,7 @@ const Product = () => {
 	return (
 		<ListContainer>
 			<ProductListTitle>Sua lista de adoção</ProductListTitle>
-			{dogs.length > 1 ? dogs.map((id) => {
+			{dogs.length > 0 ? dogs.map((id) => {
 				const dog = GetDog(id)
 				return (
 					<HorizontalCard
