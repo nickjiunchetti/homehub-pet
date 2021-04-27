@@ -17,6 +17,7 @@ const ButtonContainer = styled.div`
 	text-align: center;
     border-radius: 5px;
 	color: white;
+	padding: 5px;
 `
 
 const ButtonDisplay = styled.h1`

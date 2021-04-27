@@ -12,8 +12,6 @@ import HorizontalCard from '../../components/HorizontalCard'
 const Adoptions = () => {
 	const { dogs } = useDogs()
 
-	console.log(dogs, 'list')
-
 	return (
 		<ListContainer>
 			<ProductListTitle>Sua lista de adoção</ProductListTitle>
