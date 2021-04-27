@@ -2,15 +2,17 @@ import React, { createContext, useState, useContext } from 'react'
 
 export const DogsContext = createContext()
 
-export default function DogsProvider({ children }) {
+export function DogsProvider({ children }) {
 	const [dogs, setDogs] = useState([])
 
 	return (
 		<DogsContext.Provider
-			value={{
-				dogs,
-				setDogs
-			}}>
+			value={
+				{
+					dogs,
+					setDogs
+				}
+			}>
 			{children}
 		</DogsContext.Provider>
 	)

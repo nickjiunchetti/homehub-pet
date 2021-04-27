@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Image from 'next/image'
 
 //Context
 import { useDogs } from '../context/DogContext'
@@ -40,7 +39,8 @@ const CardContainer = styled.div`
 	border-radius: 10px;
 	box-shadow: 0 4px 16px 0 rgba(0,0,0,0.3);
     transition: 0.3s;
-
+	width: 500px;
+	
 	&:hover {
 		box-shadow: 0 8px 24px 0 rgba(0,0,0,0.3);
 	}

@@ -49,6 +49,10 @@ const HeaderContainer = styled.div`
 const LeftArrowIcon = styled(BiLeftArrowAlt)`
 	color: white;
 	font-size: 8vw;
+
+	@media screen and (min-width: 1600px) {
+		font-size: 45px;
+	}
 `
 
 const HeaderText = styled.h1`
@@ -56,17 +60,29 @@ const HeaderText = styled.h1`
 	font-size: 7vw;
 	font-weight: normal;
 	margin: 0;
+
+	@media screen and (min-width: 1600px) {
+		font-size: 40px;
+	}
 `
 const BoldText = styled.h1`
 	color: white;
 	font-size: 7vw;
 	margin: 0;
 	font-weight: bolder;
+	
+	@media screen and (min-width: 1600px) {
+		font-size: 40px;
+	}
 `
 
 const BiStoreIcon = styled(BiStore)`
 	color: white;
 	font-size: 8vw;
+
+	@media screen and (min-width: 1600px) {
+		font-size: 45px;
+	}
 `
 
 const Row = styled.div`

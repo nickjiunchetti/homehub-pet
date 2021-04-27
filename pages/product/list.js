@@ -35,6 +35,9 @@ const Adoptions = () => {
 const ListContainer = styled.div`
 	text-align: center;
 	background-color: whitesmoke;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
 `
 
 const ProductListTitle = styled.h1`

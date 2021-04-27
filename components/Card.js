@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Image from 'next/image'
 import Link from 'next/link'
 
 //Context
@@ -17,23 +16,6 @@ export default function Card({ source, dog, button }) {
 			return <CardTag key={index}>{removeDot}</CardTag>
 		}
 	})
-
-	function onPressAdotar() {
-		if (!dogs) {
-			setDogs(dog.id)
-		} else {
-			const selected = dogs
-
-			const found = selected.find(dogId => dogId === dog.id)
-
-			if (found) {
-				return
-			}
-			selected.push(dog.id)
-			setDogs(selected)
-		}
-
-	}
 
 	return (
 		<CardContainer>
@@ -56,12 +38,9 @@ export default function Card({ source, dog, button }) {
 				{button &&
 					<Link href={'/product/list'}>
 						<a>
-							<Button
-								onClick={() => onPressAdotar()}
-								style={{ backgroundColor: 'grey', padding: 12, fontSize: '4vw' }}
-								color={'black'}>
+							<AdoptButton onClick={() => setDogs([...dogs, dog.id])}>
 								ADOTAR
-							</Button>
+							</AdoptButton>
 						</a>
 					</Link>}
 			</InnerContainer>
@@ -76,6 +55,7 @@ const CardContainer = styled.div`
 	border-radius: 10px;
 	box-shadow: 0 4px 16px 0 rgba(0,0,0,0.3);
     transition: 0.3s;
+	max-width: 700px;
 
 	&:hover {
 		box-shadow: 0 8px 24px 0 rgba(0,0,0,0.3);
@@ -96,7 +76,11 @@ const CardTitle = styled.h2`
     color: #555555;
 	text-align: left;
 	margin: 0 0 12px 10px;
-	font-size: 4vh;
+	font-size: 3vh;
+
+	@media screen and (min-width: 1600px) {
+		font-size: 35px;
+	}
 `
 
 const Row = styled.div`
@@ -113,6 +97,10 @@ const CardTag = styled.h3`
 	border-width: 1px;
 	padding: 5px;
 	margin: 0 4px 10px 0px;
+
+	@media screen and (min-width: 1600px) {
+		font-size: 35px;
+	}
 `
 
 const List = styled.ul`
@@ -123,4 +111,19 @@ const List = styled.ul`
 	padding: 0 0 10px 10px;
 	font-size: 4vw;
 	text-align: left;
+
+	@media screen and (min-width: 1600px) {
+		font-size: 25px;
+	}
+`
+
+const AdoptButton = styled(Button)`
+	background-color: grey;
+	padding: 12;
+	font-size: '4vw';
+	color: white;
+
+@media screen and (min-width: 1600px) {
+		font-size: 35px;
+	}
 `

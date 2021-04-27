@@ -26,12 +26,19 @@ const Product = () => {
 const DetailsContainer = styled.div`
 	text-align: center;
 	background-color: whitesmoke;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
 `
 
 const DetailsTitle = styled.h1`
 	margin: 20px;
 	font-size: 22px;
 	color: #555555;
+
+	@media screen and (min-width: 1600px) {
+		font-size: 35px;
+	}
 `
 
 export default Product
