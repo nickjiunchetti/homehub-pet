@@ -19,12 +19,13 @@ export default function Home() {
 				<HomeContainer>
 					<HomeTitle>Para adoção</HomeTitle>
 					{Breeds.default.map((breed) => (
-						<Link key={breed.id} href={`/product/${breed.id}`}>
+						<Link
+							key={breed.id}
+							href={`/product/${breed.id}`}>
 							<a>
 								<Card
-									source={`/../public/static/images/${breed.id}.jpg`}
+									source={`/static/images/${breed.id}.jpg`}
 									dog={breed}
-
 								/>
 							</a>
 						</Link>

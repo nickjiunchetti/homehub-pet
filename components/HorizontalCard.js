@@ -18,7 +18,6 @@ export default function HorizontalCard({ source, dog }) {
 			selectedDogs.splice(index, 1)
 		}
 		setDogs(selectedDogs)
-		console.log(dogs, 'onPRessX')
 	}
 
 	return (
@@ -27,14 +26,7 @@ export default function HorizontalCard({ source, dog }) {
 				<XIcon />
 			</XContainer>
 			<Row>
-				{source &&
-					<Image
-						src={source}
-						alt={dog.name}
-						width={250}
-						height={250}
-					/>
-				}
+				{source && <ImageContainer style={{ backgroundImage: `url(${source})` }} />}
 				<CardTitle>{dog.name}</CardTitle>
 			</Row>
 		</CardContainer>
@@ -53,6 +45,15 @@ const CardContainer = styled.div`
 		box-shadow: 0 8px 24px 0 rgba(0,0,0,0.3);
 	}
 `
+
+const ImageContainer = styled.div`
+	border-radius: 10px;
+	width: 100%;
+	max-width: 120px;
+	height: 100px;
+	background-size: 100% 100%;
+`
+
 const XContainer = styled(Button)`
 	display: flex;
 	float: right;
@@ -61,14 +62,14 @@ const XContainer = styled(Button)`
 
 const CardTitle = styled.h2`
     color: #555555;
-	text-align: left;
 	margin: 0 0 12px 10px;
-	font-size: 2vh;
+	font-size: 2.4vh;
+	display: flex;
+	align-items: center;
 `
 
 const Row = styled.div`
 	display: flex;
-	justify-content: space-around;
 	padding: 12px;
 `
 

@@ -13,7 +13,7 @@ export default function getDog(id) {
 	}
 
 	const dog = dogData[id]
-	const source = `/../public/images/${id}.jpg`
+	const source = `/static/images/${id}.jpg`
 
 	return { dog, source }
 }

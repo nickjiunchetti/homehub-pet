@@ -25,10 +25,14 @@ export default function Header() {
 			<Button onClick={() => router.back()} style={{ visibility: `${showBackButton ? 'visible' : 'hidden'}` }} >
 				<LeftArrowIcon />
 			</Button>
-			<Row>
-				<HeaderText>DOG</HeaderText>
-				<BoldText>HUB</BoldText>
-			</Row>
+			<Link href={`/`}>
+				<a>
+					<Row>
+						<HeaderText>DOG</HeaderText>
+						<BoldText>HUB</BoldText>
+					</Row>
+				</a>
+			</Link>
 			<BiStoreIcon />
 		</HeaderContainer>
 	)

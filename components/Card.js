@@ -37,13 +37,7 @@ export default function Card({ source, dog, button }) {
 
 	return (
 		<CardContainer>
-			{source &&
-				<Image
-					src={source}
-					alt={dog.name}
-					width={480}
-					height={480}
-				/>}
+			{source && <ImageContainer style={{ backgroundImage: `url(${source})` }} />}
 			<InnerContainer>
 				<CardTitle>{dog.name}</CardTitle>
 				<Row>
@@ -88,9 +82,11 @@ const CardContainer = styled.div`
 	}
 `
 const ImageContainer = styled.div`
-	width: 200px;
-	height: 200px;
-	background-image: url("../../public/images/6.jpg")
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	width: 100%;
+	height: 350px;
+	background-size: 100% 100%;
 `
 const InnerContainer = styled.div`
 	padding: 10px;
