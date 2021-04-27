@@ -3,11 +3,17 @@ import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
+//Context
+import { useDogs } from '../context/DogContext'
+
 //Components
 import { BiStore, BiLeftArrowAlt } from 'react-icons/bi'
-import Button from '../components/Button'
+import Button from './Button'
+import RedNotification from './Notification'
+
 
 export default function Header() {
+	const { dogs } = useDogs()
 	const [showBackButton, setShowBackButton] = useState(false)
 
 	const router = useRouter()
@@ -33,7 +39,12 @@ export default function Header() {
 					</Row>
 				</a>
 			</Link>
-			<BiStoreIcon />
+			<Link href={`/product/list`}>
+				<a style={{ position: 'relative' }}>
+					<RedNotification number={dogs.length} />
+					<BiStoreIcon />
+				</a>
+			</Link>
 		</HeaderContainer>
 	)
 }
