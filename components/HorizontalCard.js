@@ -31,9 +31,10 @@ export default function HorizontalCard({ source, dog }) {
 					<Image
 						src={source}
 						alt={dog.name}
-						width={200}
-						height={200}
-					/>}
+						width={250}
+						height={250}
+					/>
+				}
 				<CardTitle>{dog.name}</CardTitle>
 			</Row>
 		</CardContainer>

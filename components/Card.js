@@ -14,7 +14,7 @@ export default function Card({ source, dog, button }) {
 	const tags = !words ? null : words.map((word, index) => {
 		const removeDot = word.replace(',', '')
 		if (index < 4) {
-			return <CardTag>{removeDot}</CardTag>
+			return <CardTag key={index}>{removeDot}</CardTag>
 		}
 	})
 
@@ -41,8 +41,8 @@ export default function Card({ source, dog, button }) {
 				<Image
 					src={source}
 					alt={dog.name}
-					width={1000}
-					height={700}
+					width={480}
+					height={480}
 				/>}
 			<InnerContainer>
 				<CardTitle>{dog.name}</CardTitle>
@@ -51,12 +51,13 @@ export default function Card({ source, dog, button }) {
 				</Row>
 				{dog.life_span &&
 					<List>
-						<li id={1}>- Life Span: {dog.life_span}</li>
-						{dog.bred_for && <li id={2}>- Bred For: {dog.bred_for}</li>}
-						<li id={3}>- Breed Group: {dog.breed_group}</li>
-						<li id={4}>- Temperament: {dog.temperament}</li>
-						<li id={5}>- Weight: {dog.weight.metric}</li>
-						<li id={6}>- Height: {dog.height.metric}</li>
+						<li>- Life Span: {dog.life_span}</li>
+						{dog.bred_for &&
+							<li>- Bred For: {dog.bred_for}</li>}
+						<li>- Breed Group: {dog.breed_group}</li>
+						<li>- Temperament: {dog.temperament}</li>
+						<li>- Weight: {dog.weight.metric}</li>
+						<li>- Height: {dog.height.metric}</li>
 					</List>}
 				{button &&
 					<Link href={'/product/list'}>
@@ -85,6 +86,11 @@ const CardContainer = styled.div`
 	&:hover {
 		box-shadow: 0 8px 24px 0 rgba(0,0,0,0.3);
 	}
+`
+const ImageContainer = styled.div`
+	width: 200px;
+	height: 200px;
+	background-image: url("../../public/images/6.jpg")
 `
 const InnerContainer = styled.div`
 	padding: 10px;

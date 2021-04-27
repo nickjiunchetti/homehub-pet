@@ -9,7 +9,7 @@ import { useDogs } from '../../context/DogContext'
 //Components
 import HorizontalCard from '../../components/HorizontalCard'
 
-const Product = () => {
+const Adoptions = () => {
 	const { dogs } = useDogs()
 
 	console.log(dogs, 'list')
@@ -17,10 +17,11 @@ const Product = () => {
 	return (
 		<ListContainer>
 			<ProductListTitle>Sua lista de adoção</ProductListTitle>
-			{dogs.length > 0 ? dogs.map((id) => {
+			{dogs.length > 0 ? dogs.map((id, index) => {
 				const dog = GetDog(id)
 				return (
 					<HorizontalCard
+						key={index}
 						source={dog.source}
 						dog={dog.dog}
 					/>
@@ -42,4 +43,4 @@ const ProductListTitle = styled.h1`
 	color: #555555;
 `
 
-export default Product
+export default Adoptions
